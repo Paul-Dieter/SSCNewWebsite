@@ -253,6 +253,66 @@
     }
 }
 
+/* Burger Icon */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Show burger on mobile */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(255,255,255,0.95);
+        flex-direction: column;
+        width: 200px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+}
+
+/* Burger animation when open */
+.burger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .hero-section h1 {
